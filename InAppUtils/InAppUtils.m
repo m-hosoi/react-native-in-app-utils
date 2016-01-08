@@ -37,6 +37,8 @@ RCT_EXPORT_MODULE()
                 if (callback) {
                     if(transaction.error.code != SKErrorPaymentCancelled){
                         callback(@[@"transaction_failed"]);
+                    }else{
+                        callback(@[@"transaction_cancelled"]);
                     }
                     [_callbacks removeObjectForKey:key];
                 } else {
